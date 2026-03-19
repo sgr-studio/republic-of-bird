@@ -4,50 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="web-icon.png" type="image/png">
-    <link rel="stylesheet" href="main.css">
-    <title>▌共和国</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <title>▌きーうぃばぁど共和国</title>
+    <style>
+        /* スクロールアニメーション用の基本設定 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* 動画の上の文字を見やすくするためのシャドウ */
+        .text-shadow-lg {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
-<body>
-    <main>
-        <header>
-            <div>
-                <img src="web-icon.png" alt="サイトアイコン" width="80" height="80">
+<body class="bg-black text-slate-100 font-sans selection:bg-emerald-500 selection:text-white">
+
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black z-10"></div>
+
+        <div class="relative z-20 text-center px-6">
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 animate-pulse text-shadow-lg">
+                REPUBLIC OF <span class="text-emerald-400">BIRD</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-light text-emerald-50 max-w-2xl mx-auto mb-10 opacity-90 tracking-widest">
+                自由と創造性を重んじるマインクラフトサーバーの共和国
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button class="group relative px-10 py-4 bg-emerald-500 text-white font-black rounded-sm overflow-hidden transition-all hover:pr-12 active:scale-95">
+                    <span class="relative z-10 text-xl italic">ENTER THE NATION</span>
+                    <div class="absolute inset-y-0 right-0 w-0 bg-white/20 transition-all group-hover:w-full"></div>
+                </button>
             </div>
+        </div>
 
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="about.html">当国について</a></li>
-                <li><a href="enter.html">入国について</a></li>
-                <li><a href="login.html">ログイン</a></li>
-            </ul>
-        </header>
-        <section>
-            <h1>ようこそ</h1>
-            <h3>きーうぃばぁど共和国へ</h3>
-            <p>とあるマインクラフトサーバーの中の一つである共和国です。当国は自由と創造性を重んじるコミュニティであり、争いなどを嫌います。</p>
-            <p>当国の特徴:</p>
-            <ul>
-                <li>自由な表現の場</li>
-                <li>多様な文化交流</li>
-                <li>創作活動の支援</li>
-            </ul>
-            <p>この共和国は招待,承認されない限り入国ができません。</p>
-        </section>
-        <section>
-            <h2>最新のお知らせ</h2>
-            <article>
-                <h3>新しい中央銀行が完成</h3>
-                <p>当国の中心部に新しい銀行が完成しました。共和国最大の中央銀行です。<br>通貨は「kft(キフルト)」です。</p>
-            </article>
-            <article>
-                <h3>コミュニティイベント開催予定</h3>
-                <p>来月、共和国内で建国際が開催予定です。</p>
-            </article>
-        </section>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-emerald-400">
+            <p class="text-xs tracking-widest font-bold mb-2">SCROLL</p>
+            <div class="w-px h-12 bg-emerald-400 mx-auto opacity-50"></div>
+        </div>
+    </section>
 
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="web-icon.png" alt="サイトアイコン" class="w-10 h-10 rounded-full border border-emerald-500/50">
+                <span class="font-black text-xl tracking-tighter italic">きーうぃばぁど<span class="text-emerald-500">共和国</span></span>
+            </div>
+            <ul class="hidden md:flex gap-10 font-bold text-sm tracking-widest">
+                <li><a href="index.html" class="hover:text-emerald-400 transition-colors">HOME</a></li>
+                <li><a href="about.html" class="hover:text-emerald-400 transition-colors">ABOUT</a></li>
+                <li><a href="enter.html" class="hover:text-emerald-400 transition-colors">CITIZENSHIP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="bg-slate-950">
+        <div class="max-w-6xl mx-auto px-6 py-32 space-y-48">
+            
+            <section class="reveal flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1 space-y-8">
+                    <h2 class="text-6xl font-black leading-tight">私たちが<br><span class="text-emerald-500 underline decoration-4 underline-offset-8">大切にするもの。</span></h2>
+                    <p class="text-slate-400 text-xl leading-relaxed">
+                        とあるマインクラフトサーバーの中の一つである共和国です。当国は自由と創造性を重んじるコミュニティであり、争いなどを嫌います。
+                    </p>
+                </div>
+                <div class="flex-1 w-full aspect-square bg-emerald-900/20 rounded-2xl border border-emerald-500/30 flex items-center justify-center text-emerald-500/50 italic text-2xl">
+                    [ CInematic Image ]
+                </div>
+            </section>
+
+            <section class="reveal space-y-12">
+                <h2 class="text-4xl font-black text-center tracking-tighter italic">LATEST NEWS</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <article class="group bg-white/5 p-10 rounded-sm border-l-4 border-emerald-500 hover:bg-white/10 transition-all cursor-default">
+                        <time class="text-emerald-500 font-mono text-sm tracking-tighter">2026.03.19</time>
+                        <h3 class="text-2xl font-bold mt-4 mb-4 group-hover:text-emerald-400 transition-colors">新しい中央銀行が完成</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            当国の中心部に新しい銀行が完成しました。共和国最大の中央銀行です。<br>
+                            通貨は<span class="text-white font-bold tracking-widest px-2 bg-emerald-700">kft(キフルト)</span>。
+                        </p>
+                    </article>
+                    <article class="group bg-white/5 p-10 rounded-sm border-l-4 border-emerald-500 hover:bg-white/10 transition-all cursor-default text-right">
+                        <time class="text-emerald-500 font-mono text-sm tracking-tighter">COMING SOON</time>
+                        <h3 class="text-2xl font-bold mt-4 mb-4 group-hover:text-emerald-400 transition-colors">コミュニティイベント開催</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            来月、共和国内で建国際が開催予定です。国家の威信をかけた壮大なイベントになります。
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="reveal relative py-20 px-10 bg-linear-to-r from-emerald-900 to-teal-900 rounded-sm overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-3 gap-12 items-center">
+                    <div class="md:col-span-2">
+                        <h2 class="text-4xl md:text-5xl font-black mb-8 italic">THE CULTURE OF BIRD</h2>
+                        <p class="text-emerald-50 text-xl opacity-80 leading-loose">
+                            当国は多様な文化が共存しています。建築、アート、音楽など、様々な創作活動が盛んに行われています。
+                            住民同士の交流も活発で、ここでは誰もが主人公です。
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-block text-8xl font-black text-white/10 absolute -top-10 -right-10 select-none">CULTURE</div>
+                        <button class="px-12 py-5 border-2 border-white text-white font-bold hover:bg-white hover:text-emerald-900 transition-all text-xl italic tracking-tighter">
+                            DISCOVER MORE
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
-    <footer>
-        <small>© 2024-2025 Republic of Bird</small>
+
+    <footer class="bg-black py-20 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-8">
+            <div class="text-3xl font-black italic tracking-tighter">
+                REPUBLIC OF <span class="text-emerald-500">BIRD</span>
+            </div>
+            <nav class="flex gap-8 text-slate-500 text-sm font-bold tracking-widest">
+                <a href="#" class="hover:text-white transition-colors">TWITTER</a>
+                <a href="#" class="hover:text-white transition-colors">DISCORD</a>
+                <a href="#" class="hover:text-white transition-colors">YOUTUBE</a>
+            </nav>
+            <small class="text-slate-700 font-mono uppercase tracking-[0.3em] mt-10">© 2024-2026 Republic of Bird - All Rights Reserved</small>
+        </div>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 </html>
